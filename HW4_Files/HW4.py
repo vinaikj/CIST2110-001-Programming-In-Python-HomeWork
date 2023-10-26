@@ -1,5 +1,5 @@
 # HW4.py
-# Author:
+# Author:Jayant vinaik
 
 ### README
 # This file contains buggy functions that you need to fix.
@@ -17,8 +17,7 @@
 # After you fix the function, you should run test.py to make sure that the function is fixed.
 
 
-
-def add(a:float, b:float) -> float:
+def add(a: float, b: float) -> float:
     """Add two numbers together
 
     Args:
@@ -28,11 +27,13 @@ def add(a:float, b:float) -> float:
     Returns:
         float: the sum of a and b
     """
-    return a - b
-# Where is the bug in the buggy function?
-# A:
+    return a + b
 
-def subtract(a:float, b:float) -> float:
+
+# Where is the bug in the buggy function?
+# A: subtracting not adding in line 30
+
+def subtract(a: float, b: float) -> float:
     """Subtract two numbers
 
     Args:
@@ -42,9 +43,11 @@ def subtract(a:float, b:float) -> float:
     Returns:
         float: the difference of a and b
     """
-    return a + b
+    return a - b
+
+
 # Where is the bug in the buggy function?
-# A:
+# A: using + instead
 
 def divide(a, b):
     """Divide two numbers
@@ -56,12 +59,14 @@ def divide(a, b):
     Returns:
         float: the quotient of a and b
     """
-    return a * b
+    return a / b
+
+
 # Where is the bug in the buggy function?
-# A:
+# A: not dividing in line 62
 
 
-def multiply(a:float, b:float) -> float:
+def multiply(a: float, b: float) -> float:
     """Multiply two numbers
 
     Args:
@@ -71,13 +76,14 @@ def multiply(a:float, b:float) -> float:
     Returns:
         float: the product of a and b
     """
-    return a / b
+    return a * b
+
 
 # Where is the bug in the buggy function?
-# A:
+# A: using / in line 79
 
 
-def greet(name:str)->str:
+def greet(name: str) -> str:
     """Greet a person
 
     Args:
@@ -86,12 +92,14 @@ def greet(name:str)->str:
     Returns:
         _type_: the greeting message
     """
-    return "Heloo, "+name+"!"
+    return "Hello, " + name + "!"
+
+
 # Where is the bug in the buggy function?
-# A:
+# A: missing one l in line 95
 
 
-def square(num:int) -> int:
+def square(num: int) -> int:
     """Square a number
 
     Args:
@@ -100,12 +108,14 @@ def square(num:int) -> int:
     Returns:
         int: the square of the number
     """
-    return num + num
+    return num ** 2
+
+
 # Where is the bug in the buggy function?
-# A:
+# A: add ** 2 in line 111
 
 
-def is_even(num:int) -> bool:
+def is_even(num: int) -> bool:
     """Check if a number is even
 
     Args:
@@ -114,12 +124,14 @@ def is_even(num:int) -> bool:
     Returns:
         bool: True if the number is even, False otherwise
     """
-    return num % 2 == 1
+    return num % 2 == 0
+
+
 # Where is the bug in the buggy function?
-# A:
+# A: 0 instead of 1 in 127
 
 
-def grade_calculator(score:float) -> str:
+def grade_calculator(score: float) -> str:
     """Calculate the grade based on the score
 
     Args:
@@ -132,7 +144,7 @@ def grade_calculator(score:float) -> str:
         return "A"
     elif 80 <= score < 90:
         return "B"
-    elif 70 <= score < 79:
+    elif 70 <= score < 80:
         return "C"
     elif 60 <= score < 70:
         return "D"
@@ -140,31 +152,35 @@ def grade_calculator(score:float) -> str:
         return "F"
     else:
         return "Invalid Score"
-# Where is the bug in the buggy function?
-# A:
 
-def speed_check(speed:float) -> str:
+
+# Where is the bug in the buggy function?
+# A: 80 not 79
+
+def speed_check(speed: float) -> str:
     """Check if the speed is within the speed limit
-    
+
     Args:
         speed (float): speed to check
-        
+
     Returns:
         str: the speed check result
     """
     # Assuming general speed limits: min: 20, max: 70 (in mph)
-    if speed < 20:  
+    if speed < 20:
         return "Too slow"
-    elif 20 <= speed <= 60:
+    elif 20 <= speed <= 65:
         return "Within limit"
-    elif speed > 70: 
+    elif speed > 70:
         return "Over speed limit"
     else:
         return "Unknown"
-# Where is the bug in the buggy function?
-# A:
 
-def is_leap_year(year:int) -> bool:
+
+# Where is the bug in the buggy function?
+# A: 65 is with in limit
+
+def is_leap_year(year: int) -> bool:
     """Check if a year is a leap year
 
     Args:
@@ -173,19 +189,18 @@ def is_leap_year(year:int) -> bool:
     Returns:
         bool: True if the year is a leap year, False otherwise
     """
-    if year % 4 == 0:
-        return True
-    elif year % 100 == 0:
-        return False
-    elif year % 400 == 0:
+    if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
         return True
     else:
         return False
+
+
 # Where is the bug in the buggy function?
-# A:
+# A: can't check them all independently
 
 def main():
     print("You are running me directly!")
+
 
 if __name__ == "__main__":
     main()
