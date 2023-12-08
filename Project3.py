@@ -38,7 +38,7 @@
 # 2. Create a User class that has the following attributes (create a __init__ method)):
 #    a. Name (string)
 #    c. ID (int)
-#   d. borrowedBooks (list of books)
+#    d. borrowedBooks (list of books) - this should not be passed in as a parameter, it should be set to an empty list by default
 # USE SELF IN THE __INIT__ METHOD TO CREATE THESE ATTRIBUTES
 
 # Methods:
